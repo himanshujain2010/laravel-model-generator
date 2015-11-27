@@ -8,6 +8,7 @@ use Illuminate\Console\GeneratorCommand;
 
 class MakeModelsCommand extends GeneratorCommand
 {
+    use \Illuminate\Console\AppNamespaceDetectorTrait;
     /**
      * The console command name.
      *
@@ -171,7 +172,8 @@ class MakeModelsCommand extends GeneratorCommand
         $class = $this->buildClass($name);
 
         $properties = $this->getTableProperties($table);
-        
+        $namespace = $this->getAppNamespace();
+        $class = str_replace('{{namespace}}', $namespace, $class);
         $class = str_replace('{{class}}', $name, $class);
         $class = str_replace('{{extends}}', $this->option('extends'), $class);
         $class = str_replace('{{fillable}}', 'protected $fillable = ' . VariableConversion::convertArrayToString($properties['fillable']) . ';', $class);
