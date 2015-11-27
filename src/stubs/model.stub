@@ -5,7 +5,7 @@ namespace DummyNamespace;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class DummyClass
+ * Class {{class}}
  */
 class {{class}} extends {{extends}}
 {
