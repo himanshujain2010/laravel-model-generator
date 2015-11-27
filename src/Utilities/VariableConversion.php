@@ -20,8 +20,8 @@ class VariableConversion
        
         $string = str_replace('CloudSites','',$string);
         $string = str_replace('CloudSite','',$string);
-        
-        if($table='cloud_sites'){
+            
+        if($table=='cloud_sites'){
             $string = 'Site';
         }
         return $string;
