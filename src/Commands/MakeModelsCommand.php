@@ -171,7 +171,8 @@ class MakeModelsCommand extends GeneratorCommand
         $class = $this->buildClass($name);
 
         $properties = $this->getTableProperties($table);
-
+        
+        $class = str_replace('{{class}}', $name, $class);
         $class = str_replace('{{extends}}', $this->option('extends'), $class);
         $class = str_replace('{{fillable}}', 'protected $fillable = ' . VariableConversion::convertArrayToString($properties['fillable']) . ';', $class);
         $class = str_replace('{{guarded}}', 'protected $guarded = ' . VariableConversion::convertArrayToString($properties['guarded']) . ';', $class);

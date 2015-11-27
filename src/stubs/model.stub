@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class DummyClass
  */
-class DummyClass extends {{extends}}
+class {{class}} extends {{extends}}
 {
 
     {{timestamps}}
