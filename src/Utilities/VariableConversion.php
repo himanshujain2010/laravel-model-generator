@@ -17,8 +17,13 @@ class VariableConversion
     public static function convertTableNameToClassName($table)
     {
         $string = str_replace(' ', '', ucwords(str_replace('_', ' ', $table)));
+       
         $string = str_replace('CloudSites','',$string);
         $string = str_replace('CloudSite','',$string);
+        
+        if($table='cloud_sites'){
+            $string = 'Site';
+        }
         return $string;
     }
 
