@@ -127,7 +127,7 @@ class MakeModelsCommand extends GeneratorCommand
         $ignoreTable = $this->option("ignore");
 
         if ($this->option("ignoresystem")) {
-            $ignoreSystem = "users,permissions,permission_role,roles,role_user,users,migrations,password_resets";
+            $ignoreSystem = "users,permissions,permission_role,roles,role_user,users,migrations,password_resets,api_keys,api_logs,failed_jobs,jobs,phinx_mig,sessions";
 
             if (is_string($ignoreTable)) {
                 $ignoreTable .= "," . $ignoreSystem;
