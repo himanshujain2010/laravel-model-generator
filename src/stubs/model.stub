@@ -12,6 +12,11 @@ class {{class}} extends {{extends}}
 
     {{timestamps}}
 
+    /**
+	 * The attributes that are mass assignable.
+	 *
+	 * @var array
+	 */
     {{fillable}}
 
     {{guarded}}
@@ -20,5 +25,11 @@ class {{class}} extends {{extends}}
 
     {{setters}}
 
+    /**
+	 * The database table used by the model.
+	 *
+	 * @var string
+	 */
+	{{table}}
 
 }

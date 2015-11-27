@@ -180,6 +180,8 @@ class MakeModelsCommand extends GeneratorCommand
         $class = str_replace('{{guarded}}', 'protected $guarded = ' . VariableConversion::convertArrayToString($properties['guarded']) . ';', $class);
         $class = str_replace('{{timestamps}}', 'public $timestamps = ' . VariableConversion::convertBooleanToString($properties['timestamps']) . ';', $class);
 
+        $class = str_replace('{{table}}', 'public $table = ' .$table . ';', $class);
+
         if ($this->option("getset")) {
             $class = $this->replaceTokensWithSetGetFunctions($properties, $class);
         } else {
